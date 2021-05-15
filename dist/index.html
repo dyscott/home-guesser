@@ -1,0 +1,53 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Guesser</title>
+    <meta name="description" content="Home Guesser">
+    <meta name="author" content="dylanscott20">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="h-screen bg-gray-800">
+    <div class="flex flex-col h-full">
+        <div class="flex justify-between">
+            <div class="inline-flex flex-col bg-gray-700 font-bold py-2 px-2 m-1 rounded w-32 h-14 items-center justify-between invisible"
+                id="totalscorediv">
+                <span class="text-white">Total Score: </span>
+                <span class="text-gray-300 text-sm truncate overflow-hidden text-center w-full" id="totalscore"></span>
+            </div>
+            <div class="inline-flex flex-col shadow-md bg-gray-700 font-bold py-2 px-2 m-1 rounded w-32 h-14 items-center justify-between invisible"
+                id="scorediv">
+                <span class="text-white">Score: </span>
+                <span class="text-gray-300 text-sm truncate overflow-hidden text-center w-full" id="score"></span>
+            </div>
+            <div class="inline-flex flex-col bg-gray-700 font-bold py-2 px-2 m-1 rounded w-32 h-14 items-center justify-between invisible"
+                id="distancediv">
+                <span class="text-white">Distance: </span>
+                <span class="text-gray-300 text-sm truncate overflow-hidden text-center w-full" id="distance"></span>
+            </div>
+        </div>
+        <div class="flex w-full h-full overflow-y-hidden">
+            <div id="image" class="flex-grow w-full"></div>
+            <div id="map" class="flex-grow w-full"></div>
+        </div>
+        <div class="grid grid-rows-none grid-cols-3">
+            <button disabled
+                class="bg-red-600 disabled:opacity-40 text-white font-bold py-2 px-4 m-1 w-64 rounded h-14 col-start-2 justify-self-center"
+                id="guess" onclick="clickGuess()">Guess</button>
+            <button disabled
+                class="bg-gray-700 disabled:opacity-40 text-white font-bold py-2 px-4 m-1 w-32 rounded h-14 justify-self-end"
+                id="next" onclick="clickNext()">Next</button>
+        </div>
+    </div>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=geometry&v=weekly"></script>
+    <script src="js/house.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/game.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+#map {
+    @apply h-auto w-full
+}
+
+img {
+    @apply object-cover w-full h-full
+}

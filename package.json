@@ -1,0 +1,15 @@
+{
+    "name": "home-guesser",
+    "version": "1.0.0",
+    "description": "A game based off GeoGuessr which shows images of houses from Zillow and asks the user to guess their location",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "npx tailwindcss-cli build ./src/style.css -o ./dist/css/style.css "
+    },
+    "author": "dylanscott20",
+    "license": "MIT",
+    "devDependencies": {
+        "tailwindcss": "^2.1.2",
+        "tailwindcss-cli": "^0.1.2"
+    }
+}
