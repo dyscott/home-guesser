@@ -1,4 +1,4 @@
-# Home Guesser :house: :earth_americas:
+# Home Guesser :house::earth_americas:
 A game based off GeoGuessr which shows images of houses from Zillow and asks the user to guess their location.
 
 ## About
