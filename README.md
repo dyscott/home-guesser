@@ -47,7 +47,7 @@ If you want to make any changes to the styling, make sure you rebuild the CSS us
 ```npm run build```
 
 ## Improvements
-This is a proof-of-concept so there is a lot of room for improvment:
+This is a proof-of-concept so there is a lot of room for improvement:
 
 - [ ] Add error-checking. Currently, when an error occurs the game just crashes.
 - [ ] Improve scoring. Currently, it feels like it awards guesses too much and doesn't award precision enough.
