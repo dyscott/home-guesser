@@ -34,7 +34,7 @@ I am currently hosting Home Guesser on my personal [website](https://www.dyscott
 
 ## Details
 
-While I figured some people may enjoy playing or experimenting with Home Guesser, I primarly made it as a learning experience. Here are some note-worthy details about the game:
+While I figured some people may enjoy playing or experimenting with Home Guesser, I primarly made it as a learning exercise. Here are some note-worthy details about the game:
 
 - Uses a client-side web scraper. This makes the server-side extremely simple. All that is needed is a static web host (such as GitHub pages) and a CORS Proxy which can be run using any serverless platform.
 - Uses the [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/overview). While this API is very expensive, since the map is only loaded once per session, it is at least somewhat cost effective.
