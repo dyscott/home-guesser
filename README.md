@@ -34,7 +34,7 @@ I am currently hosting Home Guesser on my personal [website](https://www.dyscott
 
 ## Details
 
-While I figured some people may enjoy playing or experimenting with Home Guesser, I primarly made it as a learning exercise. Here are some note-worthy details about the game:
+Here are some note-worthy details about the app:
 
 - Uses a client-side web scraper. This makes the server-side extremely simple. All that is needed is a static web host (such as GitHub pages) and a CORS Proxy which can be run using any serverless platform.
 - Uses the [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/overview). While this API is very expensive, since the map is only loaded once per session, it is at least somewhat cost effective.
@@ -47,7 +47,7 @@ If you want to make any changes to the styling, make sure you rebuild the CSS us
 ```npm run build```
 
 ## Improvements
-This is a proof-of-concept so there is a lot of room for improvement:
+This is primarily a proof-of-concept, so there is a lot of room for improvement:
 
 - [ ] Add error-checking. Currently, when an error occurs the game just crashes.
 - [ ] Improve scoring. Currently, it feels like it awards guesses too much and doesn't award precision enough.
