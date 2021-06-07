@@ -41,20 +41,23 @@ async function getHouseDetails(url) {
 
 // Returns the image URL and coordinates of a random house
 async function getRandomHouse() {
-    // Get a random state and page number
-    const state = getRandomState()
-    const page = Math.ceil(Math.random() * 10)
+    try {
+        // Get a random state and page number
+        const state = getRandomState()
+        const page = Math.ceil(Math.random() * 10)
 
-    const pageDocument = await getDocumentFromUrl(state + "/houses/" + page + "_p/")
-    const houseLinks = Array.from(pageDocument.getElementsByClassName("list-card-img")).map(element => element.href.slice(44))
+        const pageDocument = await getDocumentFromUrl(state + "/houses/" + page + "_p/")
+        const houseLinks = Array.from(pageDocument.getElementsByClassName("list-card-img")).map(element => element.href.slice(44))
 
-    // Select a random house
-    const house = houseLinks[Math.floor(Math.random() * houseLinks.length)]
-
-    // Get details for house
-    const details = await getHouseDetails(house)
-
-    return details
+        // Select a random house
+        const house = houseLinks[Math.floor(Math.random() * houseLinks.length)]
+        
+        const details = await getHouseDetails(house);
+        return details;
+    } catch(error) {
+        // If we get an error, retry
+        return getRandomHouse();
+    }
 }
 
 // Called after every new round, replaces the current house and coordinates
