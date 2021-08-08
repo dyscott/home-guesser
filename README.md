@@ -49,7 +49,6 @@ If you want to make any changes to the styling, make sure you rebuild the CSS us
 ## Improvements
 This is primarily a proof-of-concept, so there is a lot of room for improvement:
 
-- [ ] Add error-checking. Currently, when an error occurs the game just crashes.
 - [ ] Improve scoring. Currently, it feels like it awards guesses too much and doesn't award precision enough.
 - [ ] Switch from Zillow to an international real-estate site to add more variety. 
 - [ ] Switch from Google Maps to a less expensive API such as OpenLayers which is free. 
