@@ -32,10 +32,12 @@ function getRandomState() {
 async function getHouseDetails(url) {
     const pageDocument = await getDocumentFromUrl(url)
 
-    const json = JSON.parse(pageDocument.getElementsByClassName("ds-data-col-data-forward")[0].children[1].innerHTML)
-    const json2 = JSON.parse(pageDocument.getElementsByClassName("ds-data-col-data-forward")[0].children[2].innerHTML)
+    const apolloData = JSON.parse(pageDocument.getElementById("hdpApolloPreloadedData").innerHTML)
+    const apiCache = JSON.parse(apolloData.apiCache)
+    const fullQueryKey = Object.keys(apiCache)[1]
+    const propertyData = apiCache[fullQueryKey].property
 
-    return [json2.image, json.geo.latitude, json.geo.longitude]
+    return [propertyData.hiResImageLink, propertyData.latitude, propertyData.longitude]
 
 }
 
@@ -47,15 +49,16 @@ async function getRandomHouse() {
         const page = Math.ceil(Math.random() * 10)
 
         const pageDocument = await getDocumentFromUrl(state + "/houses/" + page + "_p/")
-        const houseLinks = Array.from(pageDocument.getElementsByClassName("list-card-img")).map(element => element.href.slice(44))
-
-        // Select a random house
-        const house = houseLinks[Math.floor(Math.random() * houseLinks.length)]
+        const houseIds = Array.from(pageDocument.getElementsByClassName("list-card")).map(element => element.id.replace("zpid_", "") + "_zpid")
         
-        const details = await getHouseDetails(house);
+        // Select a random house
+        const house = houseIds[Math.floor(Math.random() * houseIds.length)]
+        
+        const details = await getHouseDetails("homedetails/" + house);
         return details;
     } catch(error) {
         // If we get an error, retry
+        await new Promise(r => setTimeout(r, 2000)); // Wait to avoid getting a captcha
         return getRandomHouse();
     }
 }
