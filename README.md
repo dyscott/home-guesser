@@ -10,7 +10,7 @@ Home Guesser is a game inspired by [GeoGuessr](https://www.geoguessr.com/) which
 ## Usage
 
 ### Option 1 - Hosted
-I am currently hosting Home Guesser on my personal [website](https://www.dyscott.xyz/projects/home-guesser). This is subject to change if demand increases (the Google Maps API is expensive).
+I am currently hosting Home Guesser on my personal [website](https://projects.dyscott.xyz/home-guesser). This is subject to change if demand increases (the Google Maps API is expensive).
 
 ### Option 2 - Self-Host (With Extension)
 
