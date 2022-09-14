@@ -49,7 +49,7 @@ async function getRandomHouse() {
         const page = Math.ceil(Math.random() * 10)
 
         const pageDocument = await getDocumentFromUrl(state + "/houses/" + page + "_p/")
-        const houseIds = Array.from(pageDocument.getElementsByClassName("list-card")).map(element => element.id.replace("zpid_", "") + "_zpid")
+        const houseIds = Array.from(pageDocument.getElementsByClassName("list-card_not-saved")).map(element => element.id.replace("zpid_", "") + "_zpid")
         
         // Select a random house
         const house = houseIds[Math.floor(Math.random() * houseIds.length)]
