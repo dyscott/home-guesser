@@ -32,9 +32,9 @@ function getRandomState() {
 async function getHouseDetails(url) {
     const pageDocument = await getDocumentFromUrl(url)
 
-    const apolloData = JSON.parse(pageDocument.getElementById("hdpApolloPreloadedData").innerHTML)
-    const apiCache = JSON.parse(apolloData.apiCache)
-    const fullQueryKey = Object.keys(apiCache)[1]
+    const apolloData = JSON.parse(pageDocument.getElementById("__NEXT_DATA__").innerHTML)
+    const apiCache = JSON.parse(apolloData.props.pageProps.gdpClientCache)
+    const fullQueryKey = Object.keys(apiCache)[0]
     const propertyData = apiCache[fullQueryKey].property
 
     return [propertyData.hiResImageLink, propertyData.latitude, propertyData.longitude]
